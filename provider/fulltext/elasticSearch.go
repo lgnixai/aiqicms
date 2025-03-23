@@ -1,14 +1,19 @@
+//go:build !noelasticsearch
+// +build !noelasticsearch
+
 package fulltext
 
 import (
 	"bytes"
 	"context"
 	"encoding/json"
-	es8 "github.com/elastic/go-elasticsearch/v8"
-	"github.com/elastic/go-elasticsearch/v8/typedapi/types"
-	"kandaoni.com/anqicms/config"
 	"log"
 	"strconv"
+
+	es8 "github.com/elastic/go-elasticsearch/v8"
+	"github.com/elastic/go-elasticsearch/v8/typedapi/types"
+
+	"kandaoni.com/anqicms/config"
 )
 
 type ElasticSearchService struct {

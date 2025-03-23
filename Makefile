@@ -48,7 +48,7 @@ build:
 	cp -r ./dictionary.txt ./release/$(GOOS)/
 	cp -r ./source/cwebp_$(GOOS)_$(GOARCH)$(BIN_SUFFIX) ./release/$(GOOS)/source/
 	find ./release/$(GOOS) -name '.DS_Store' | xargs rm -f
-	GOOS=$(GOOS) GOARCH=$(GOARCH) $(GO) build -trimpath $(LDFLAGS) -o ./release/$(GOOS)/$(BINARY_NAME)$(BIN_SUFFIX) kandaoni.com/anqicms/main
+	GOOS=$(GOOS) GOARCH=$(GOARCH) $(GO) build -tags noelasticsearch -trimpath $(LDFLAGS) -o ./release/$(GOOS)/$(BINARY_NAME)$(BIN_SUFFIX) kandaoni.com/anqicms/main
 	strip ./release/$(GOOS)/$(BINARY_NAME)$(BIN_SUFFIX)
 	rm -rf anqicms.syso
 

@@ -3,11 +3,13 @@ package provider
 import (
 	"errors"
 	"fmt"
+	"log"
+
 	"gorm.io/gorm"
+
 	"kandaoni.com/anqicms/library"
 	"kandaoni.com/anqicms/model"
 	"kandaoni.com/anqicms/provider/fulltext"
-	"log"
 )
 
 const (
@@ -44,8 +46,11 @@ func (w *Website) InitFulltext(focus bool) {
 	} else if w.PluginFulltext.Engine == "meilisearch" {
 		// meili
 		w.searcher, err = fulltext.NewMeiliSearchService(w.PluginFulltext, indexName)
-	} else if w.PluginFulltext.Engine == "elasticsearch" {
-		w.searcher, err = fulltext.NewElasticSearchService(w.PluginFulltext, indexName)
+
+		//} else if w.PluginFulltext.Engine == "elasticsearch" {
+		//	w.searcher, err = fulltext.NewElasticSearchService(w.PluginFulltext, indexName)
+		//}
+
 	} else {
 		// 默认使用 wukong
 		w.searcher, err = fulltext.NewWukongService(w.PluginFulltext, indexName)

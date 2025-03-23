@@ -7,7 +7,7 @@ goblog
 /doc
 /test
 /data
-/system
+
 /release
 collector.json
 keyword.json
