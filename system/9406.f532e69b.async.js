@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkAnQiCMS=self.webpackChunkAnQiCMS||[]).push([[9406],{49406:function(M,n,t){t.r(n),t.d(n,{default:function(){return s}});var O=t(75271),u=t(32064),E=t(52676);function s(){var C=(0,u.useOutletContext)();return(0,E.jsx)(u.Outlet,{context:C})}}}]);
