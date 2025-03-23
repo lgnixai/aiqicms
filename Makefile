@@ -36,7 +36,7 @@ build:
 	mkdir -p -v ./release/$(GOOS)/cache
 	mkdir -p -v ./release/$(GOOS)/public
 	mkdir -p -v ./release/$(GOOS)/source
-	cp -r ./doc ./release/$(GOOS)/
+	cp -r ./docs ./release/$(GOOS)/
 	cp -r ./public/static ./release/$(GOOS)/public/
 	cp -r ./public/*.xsl ./release/$(GOOS)/public/ 2>/dev/null || true
 	cp -r ./template ./release/$(GOOS)/
